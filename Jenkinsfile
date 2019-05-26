@@ -22,7 +22,7 @@ pipeline {
     stage('Tag') {
       agent any
       steps {
-        sh 'cp -v $WORKSPACE/Dockerfile $WORKSPACE/target'
+        sh 'cp -v $WORKSPACE/Dockerfile $WORKSPACE/target/Dockerfile'
         sh ' docker build -t ocel12356/helloworldwebappdocker $WORKSPACE/target '
       }
     }
