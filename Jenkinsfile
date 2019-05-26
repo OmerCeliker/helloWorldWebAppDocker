@@ -19,17 +19,6 @@ pipeline {
         sh 'mvn  clean install -Dmaven.test.skip=true '
       }
     }
-    stage('Tag') {
-      agent {
-        dockerfile {
-          dir 'target'
-          additionalBuildArgs '-t ocel12356/helloworldwebappdocker'
-        }
 
-      }
-      steps {
-        sh 'cd target'
-      }
-    }
   }
 }
