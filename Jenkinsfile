@@ -22,7 +22,6 @@ pipeline {
     stage('Tag') {
       agent {
         dockerfile {
-          filename 'Dockerfile'
           dir 'target'
           additionalBuildArgs '-t ocel12356/helloworldwebappdocker'
         }
