@@ -22,7 +22,7 @@ pipeline {
       }
     }
     
-        stage('Build') {
+        stage('Tag') {
       agent any
       steps {
         sh 'cp -v $WORKSPACE/Dockerfile $WORKSPACE/target'
