@@ -42,5 +42,24 @@ docker \\
  run -p 8083:8083/tcp  ocel12356/helloworldwebappdocker  &'''
       }
     }
+    stage('UnitTest') {
+      parallel {
+        stage('UnitTest') {
+          steps {
+            sh 'echo running unit tests'
+          }
+        }
+        stage('IntegrationTest') {
+          steps {
+            sh 'echo running Integration Test'
+          }
+        }
+        stage('SmokeTest') {
+          steps {
+            sh 'echo smokeTest'
+          }
+        }
+      }
+    }
   }
 }
