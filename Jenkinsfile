@@ -21,14 +21,12 @@ pipeline {
         sh ' docker build -t ocel12356/helloworldwebappdocker ./target '
       }
     }
-    
-        stage('Tag') {
+    stage('Tag') {
       agent any
       steps {
         sh 'cp -v $WORKSPACE/Dockerfile $WORKSPACE/target'
         sh ' docker build -t ocel12356/helloworldwebappdocker $WORKSPACE/target '
       }
     }
-    
   }
 }
