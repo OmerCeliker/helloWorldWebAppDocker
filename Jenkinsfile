@@ -23,7 +23,7 @@ pipeline {
       agent any
       steps {
         sh 'pwd'
-        sh 'docker build -t ocel12356/springboothelloworld .'
+        sh 'cd target ; pwd ; docker build -t ocel12356/springboothelloworld .'
       }
     }
   }
