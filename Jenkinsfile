@@ -22,7 +22,7 @@ pipeline {
     stage('Tag') {
       agent any
       steps {
-        sh ' ls $WORKSPACE/target  '
+        sh 'pwd '
       }
     }
   }
