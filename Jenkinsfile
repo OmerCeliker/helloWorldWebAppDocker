@@ -19,5 +19,11 @@ pipeline {
         sh 'mvn  clean install -Dmaven.test.skip=true '
       }
     }
+    stage('Tag') {
+      steps {
+        sh '''pwd
+docker ps'''
+      }
+    }
   }
 }
