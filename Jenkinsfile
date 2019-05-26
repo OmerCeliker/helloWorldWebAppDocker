@@ -19,8 +19,7 @@ pipeline {
         sh 'mvn  clean install -Dmaven.test.skip=true '
       }
     }
-    
-        stage('Tests') {
+    stage('Tests') {
       parallel {
         stage('UnitTest') {
           steps {
@@ -39,9 +38,6 @@ pipeline {
         }
       }
     }
-    
-    
-    
     stage('TagBuild') {
       steps {
         sh '''pwd
@@ -65,6 +61,5 @@ docker \\
  run -p 8083:8083/tcp  ocel12356/helloworldwebappdocker  &'''
       }
     }
-
   }
 }
