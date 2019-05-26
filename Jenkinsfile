@@ -40,23 +40,22 @@ pipeline {
     }
     stage('TagBuild') {
       steps {
-        sh '''pwd
-docker ps
+        sh '''
 cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2
 docker build -t ocel12356/helloworldwebappdocker ./target'''
       }
     }
     stage('PushToDockerHub') {
       steps {
-        sh '''pwd
-docker ps
+        sh '''
 cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2/target
 docker push ocel12356/helloworldwebappdocker '''
       }
     }
     stage('PublishPortRunImage') {
       steps {
-        sh '''pwd
+        sh '''
+         docker kill $( docker ps | grep 8083  | awk '{print $1}' )
 docker \\
  run -p 8083:8083/tcp  ocel12356/helloworldwebappdocker  &'''
       }
