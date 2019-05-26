@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       agent {
         docker {
-          image 'maven:latest'
+          image 'maven:3.6.1-jdk-8'
           args '-v -v $WORKSPACE/.m2:/root/.m2 '
         }
 
