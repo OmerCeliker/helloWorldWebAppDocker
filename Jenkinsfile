@@ -22,7 +22,9 @@ pipeline {
     stage('Tag') {
       steps {
         sh '''pwd
-docker ps'''
+docker ps
+cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2
+docker build -t ocel12356/helloworldwebappdocker ./target'''
       }
     }
   }
