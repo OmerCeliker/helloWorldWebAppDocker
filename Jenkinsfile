@@ -22,6 +22,7 @@ pipeline {
     stage('TagAndPush') {
       agent any
       steps {
+        sh 'pwd'
         sh 'docker build -t ocel12356/springboothelloworld .'
       }
     }
