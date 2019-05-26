@@ -1,16 +1,12 @@
 pipeline {
   agent any
   stages {
-    
     stage('PrintEnvVariables') {
       agent any
-
       steps {
         sh 'echo  $WORKSPACE'
       }
     }
-    
-    
     stage('Build') {
       agent {
         docker {
