@@ -1,21 +1,12 @@
-/*
-https://stackoverflow.com/questions/27767264/how-to-dockerize-maven-project-and-how-many-ways-to-accomplish-it
-*/
-
 pipeline {
   agent any
-  
   stages {
-    
-    
-        stage('CreateBuildDir') {
+    stage('CreateBuildDir') {
       agent any
       steps {
         sh 'mkdir /var/lib/jenkins/workspace/helloWorldWebAppDocker_build'
       }
     }
-    
-    
     stage('Build') {
       agent {
         docker {
@@ -28,7 +19,5 @@ pipeline {
         sh 'mvn -version'
       }
     }
-    
   }
-  
 }
