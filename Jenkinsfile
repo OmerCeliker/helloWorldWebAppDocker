@@ -16,7 +16,7 @@ pipeline {
 
       }
       steps {
-        sh 'mvn  clean install -Dmaven.test.skip=true  -DoutputDirectory=$WORKSPACE'
+        sh 'mvn  clean install -Dmaven.test.skip=true '
       }
     }
     stage('Tag') {
