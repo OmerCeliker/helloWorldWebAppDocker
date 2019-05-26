@@ -1,3 +1,7 @@
+/*
+https://jenkins.io/doc/book/pipeline/docker/
+*/
+
 pipeline {
   agent any
   stages {
