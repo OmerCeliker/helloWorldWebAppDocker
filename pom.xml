@@ -55,8 +55,7 @@
                 </executions>
             </plugin>
             
-            
-            
+            <!-- Copy the Dockerfile where jar resides so we can tag otherwise build tag fails -->            
       <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-antrun-plugin</artifactId>
