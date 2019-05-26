@@ -5,7 +5,6 @@ pipeline {
     stage('PrintEnvVariables') {
       agent any
 
-      }
       steps {
         sh 'echo  $WORKSPACE'
       }
