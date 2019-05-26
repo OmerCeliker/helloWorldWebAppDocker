@@ -21,6 +21,5 @@ pipeline {
         sh ' docker build -t ocel12356/helloworldwebappdocker ./target '
       }
     }
-   
   }
 }
