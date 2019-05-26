@@ -17,6 +17,7 @@ pipeline {
       }
       steps {
         sh 'mvn  clean install -Dmaven.test.skip=true '
+        sh 'cp -v Dockerfile ./target'
       }
     }
   }
