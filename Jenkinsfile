@@ -23,7 +23,6 @@ pipeline {
       agent any
       steps {
         sh ' ls $WORKSPACE/target  '
-        
       }
     }
   }
