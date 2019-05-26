@@ -40,7 +40,9 @@ pipeline {
     }
     stage('TagBuild') {
       steps {
-        sh '''
+        sh '''#clean prune 
+docker system prune --all --force --volumes
+
 cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2
 docker build -t ocel12356/helloworldwebappdocker ./target'''
       }
