@@ -38,7 +38,8 @@ docker push ocel12356/helloworldwebappdocker '''
     stage('PublishPortRunImage') {
       steps {
         sh '''pwd
-docker run -p 8083:8083/tcp  ocel12356/helloworldwebappdocker '''
+docker \\
+ run -p 8083:8083/tcp  ocel12356/helloworldwebappdocker  &'''
       }
     }
   }
