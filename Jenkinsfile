@@ -4,7 +4,8 @@ pipeline {
     stage('CreateBuildDir') {
       agent any
       steps {
-        sh 'mkdir /var/lib/jenkins/workspace/helloWorldWebAppDocker_build'
+        sh 'rm -rf /var/lib/jenkins/workspace/helloWorldWebAppDocker_build'
+        sh 'mkdir -p /var/lib/jenkins/workspace/helloWorldWebAppDocker_build'
       }
     }
     stage('Build') {
