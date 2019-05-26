@@ -22,7 +22,7 @@ pipeline {
     stage('Tag') {
       agent any
       steps {
-        sh 'docker -t ocel12356/helloWorldWebAppDocker . '
+        sh 'docker build -t ocel12356/helloWorldWebAppDocker . '
       }
     }
   }
