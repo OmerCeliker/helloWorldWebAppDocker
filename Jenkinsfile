@@ -30,6 +30,11 @@ agent any
           additionalBuildArgs  '-t ocel12356/helloworldwebappdocker'
         }
        }
+     
+     
+     steps {
+        sh 'pwd '
+      }
       
     }
   }
