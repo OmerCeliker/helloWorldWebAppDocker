@@ -28,7 +28,7 @@ pipeline {
 
       }
       steps {
-        sh ''
+        sh 'cd target'
       }
     }
   }
