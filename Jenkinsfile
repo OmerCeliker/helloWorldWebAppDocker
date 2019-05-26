@@ -19,13 +19,6 @@ pipeline {
         sh 'mvn  clean install -Dmaven.test.skip=true'
       }
     }
-    stage('TagAndPush') {
-      agent any
-      steps {
-        sh 'pwd'
-        sh 'mv  $WORKSPACE/target/gs-spring-boot-0.1.0.jar $WORKSPACE/gs-spring-boot-0.1.0.jar'
-        sh 'docker build -t ocel12356/springboothelloworld .'
-      }
-    }
+    
   }
 }
