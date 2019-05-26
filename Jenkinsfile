@@ -17,8 +17,6 @@ pipeline {
       }
       steps {
         sh 'mvn  clean install -Dmaven.test.skip=true '
-        sh 'cp -v Dockerfile ./target'
-        sh ' docker build -t ocel12356/helloworldwebappdocker ./target '
       }
     }
     stage('Tag') {
