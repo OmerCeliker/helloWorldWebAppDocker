@@ -19,12 +19,20 @@ pipeline {
         sh 'mvn  clean install -Dmaven.test.skip=true '
       }
     }
-    stage('Tag') {
+    stage('TagBuild') {
       steps {
         sh '''pwd
 docker ps
 cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2
 docker build -t ocel12356/helloworldwebappdocker ./target'''
+      }
+    }
+    stage('PushToDockerHub') {
+      steps {
+        sh '''pwd
+docker ps
+cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2/target
+docker push ocel12356/helloworldwebappdocker '''
       }
     }
   }
