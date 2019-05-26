@@ -19,5 +19,14 @@ pipeline {
         sh 'mvn  clean package -Dmaven.test.skip=true'
       }
     }
+    
+    
+    stage('TagAndPush') {
+      agent any
+      steps {
+        sh 'docker build -t ocel12356/SpringBootHelloWorld .'
+      }
+    }
+    
   }
 }
