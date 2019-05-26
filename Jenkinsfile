@@ -1,7 +1,5 @@
 pipeline {
- 
-agent any
-
+  agent any
   stages {
     stage('PrintEnvVariables') {
       agent any
@@ -22,20 +20,17 @@ agent any
       }
     }
     stage('Tag') {
-      
-       agent {
+      agent {
         dockerfile {
           filename 'Dockerfile'
           dir 'target'
-          additionalBuildArgs  '-t ocel12356/helloworldwebappdocker'
+          additionalBuildArgs '-t ocel12356/helloworldwebappdocker'
         }
-       }
-     
-     
-     steps {
+
+      }
+      steps {
         sh 'pwd '
       }
-      
     }
   }
 }
