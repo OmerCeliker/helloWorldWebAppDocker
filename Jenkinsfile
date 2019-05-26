@@ -19,5 +19,17 @@ pipeline {
         sh 'mvn  clean install -Dmaven.test.skip=true'
       }
     }
+    
+        stage('Tag') {
+      agent any
+
+      }
+      steps {
+        sh 'cp -v $WORKSPACE/target/gs-spring-boot-0.1.0.jar   $WORKSPACE/gs-spring-boot-0.1.0.jar'
+        sh 'docker -t ocel12356/helloWorldWebAppDocker . '
+      }
+    }
+    
+    
   }
 }
