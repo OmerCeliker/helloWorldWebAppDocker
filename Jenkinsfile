@@ -19,11 +19,6 @@ pipeline {
         sh 'mvn  clean install -Dmaven.test.skip=true '
       }
     }
-    stage('Tag') {
-      agent any
-      steps {
-        sh 'pwd '
-      }
-    }
+    
   }
 }
