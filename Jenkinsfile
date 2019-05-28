@@ -74,7 +74,7 @@ docker \\
   }
   post {
     always {
-      archiveArtifacts(artifacts: '**/gs*.jar', fingerprint: true)
+      junit '**/surefire-reports/*.xml'
 
     }
 
