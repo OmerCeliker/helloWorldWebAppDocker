@@ -72,11 +72,5 @@ docker \\
       }
     }
   }
-  post {
-    always {
-      junit '**/*.xml'
 
-    }
-
-  }
 }
