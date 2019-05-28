@@ -7,7 +7,6 @@ pipeline {
         sh 'echo  $WORKSPACE'
       }
     }
-
     stage('Tests') {
       parallel {
         stage('UnitTest') {
@@ -34,8 +33,7 @@ pipeline {
         }
       }
     }
-    
-        stage('Build') {
+    stage('Build') {
       agent {
         docker {
           image 'maven:3.6.1-jdk-8'
@@ -47,7 +45,6 @@ pipeline {
         sh 'mvn  clean install -Dmaven.test.skip=true '
       }
     }
-    
     stage('Analysis') {
       parallel {
         stage('Security') {
