@@ -7,7 +7,6 @@ pipeline {
         sh 'echo  $WORKSPACE'
       }
     }
-
     stage('Build') {
       agent {
         docker {
@@ -34,10 +33,8 @@ pipeline {
         }
       }
     }
-    
-        stage('Tests') {
+    stage('Tests') {
       parallel {
-        
         stage('IntegrationTest') {
           steps {
             sh 'echo running Integration Test'
@@ -50,7 +47,6 @@ pipeline {
         }
       }
     }
-    
     stage('TagBuild') {
       steps {
         sh '''#clean prune 
