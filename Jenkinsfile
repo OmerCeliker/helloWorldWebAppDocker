@@ -74,7 +74,7 @@ docker \\
   }
   post {
     always {
-      junit '**/surefire-reports/*.xml'
+      junit '**/*.xml'
 
     }
 
