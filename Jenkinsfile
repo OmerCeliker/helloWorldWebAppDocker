@@ -1,5 +1,13 @@
 pipeline {
   agent any
+  
+  post {
+        always {
+            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+            junit 'build/reports/**/*.xml'
+        }
+    }
+  
   stages {
     stage('PrintEnvVariables') {
       agent any
