@@ -1,13 +1,5 @@
 pipeline {
   agent any
-  
-  post {
-        always {
-            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-            junit 'build/reports/**/*.xml'
-        }
-    }
-  
   stages {
     stage('PrintEnvVariables') {
       agent any
@@ -91,5 +83,13 @@ docker \\
  run -p 8083:8083/tcp  ocel12356/helloworldwebappdocker  &'''
       }
     }
+  }
+  post {
+    always {
+      archiveArtifacts(artifacts: 'build/libs/**/*.jar', fingerprint: true)
+      junit 'build/reports/**/*.xml'
+
+    }
+
   }
 }
