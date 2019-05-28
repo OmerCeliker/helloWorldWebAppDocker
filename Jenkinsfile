@@ -22,17 +22,16 @@ pipeline {
     stage('Tests') {
       parallel {
         stage('UnitTest') {
-         agent {
-        docker {
-          image 'maven:3.6.1-jdk-8'
-          args '-v  $WORKSPACE/.m2:/root/.m2 '
-        }
+          agent {
+            docker {
+              image 'maven:3.6.1-jdk-8'
+              args '-v  $WORKSPACE/.m2:/root/.m2 '
+            }
 
-      }
-      steps {
-        sh 'mvn clean test '
-      }
-          
+          }
+          steps {
+            sh 'mvn clean test '
+          }
         }
         stage('IntegrationTest') {
           steps {
@@ -46,9 +45,7 @@ pipeline {
         }
       }
     }
-    
-    
-        stage('Analysis') {
+    stage('Analysis') {
       parallel {
         stage('Security') {
           steps {
@@ -60,11 +57,8 @@ pipeline {
             sh 'echo running Code Quality'
           }
         }
-        
       }
     }
-    
-    
     stage('TagBuild') {
       steps {
         sh '''#clean prune 
