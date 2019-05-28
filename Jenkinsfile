@@ -84,12 +84,4 @@ docker \\
       }
     }
   }
-  
-  post {
-        always {
-            archiveArtifacts artifacts: **/*.jar', fingerprint: true
-            junit '**/*.xml'
-        }
-    }
-  
 }
