@@ -86,9 +86,7 @@ docker \\
   }
   post {
     always {
-      archiveArtifacts(artifacts: '**/*.jar', fingerprint: true)
-      junit 'build/reports/**/*.xml'
-
+      archiveArtifacts(artifacts: '**/gs*.jar', fingerprint: true)
     }
 
   }
