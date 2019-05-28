@@ -87,6 +87,7 @@ docker \\
   post {
     always {
       archiveArtifacts(artifacts: '**/gs*.jar', fingerprint: true)
+
     }
 
   }
