@@ -7,21 +7,7 @@ pipeline {
         sh 'echo  $WORKSPACE'
       }
     }
-    stage('Tests') {
-      parallel {
-        
-        stage('IntegrationTest') {
-          steps {
-            sh 'echo running Integration Test'
-          }
-        }
-        stage('SmokeTest') {
-          steps {
-            sh 'echo smokeTest'
-          }
-        }
-      }
-    }
+
     stage('Build') {
       agent {
         docker {
@@ -48,6 +34,23 @@ pipeline {
         }
       }
     }
+    
+        stage('Tests') {
+      parallel {
+        
+        stage('IntegrationTest') {
+          steps {
+            sh 'echo running Integration Test'
+          }
+        }
+        stage('SmokeTest') {
+          steps {
+            sh 'echo smokeTest'
+          }
+        }
+      }
+    }
+    
     stage('TagBuild') {
       steps {
         sh '''#clean prune 
