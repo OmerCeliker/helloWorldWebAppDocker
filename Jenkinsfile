@@ -38,6 +38,25 @@ pipeline {
         }
       }
     }
+    
+    
+        stage('Analysis') {
+      parallel {
+        stage('Security') {
+          steps {
+            sh 'echo running Security'
+          }
+        }
+        stage('Code Quality') {
+          steps {
+            sh 'echo running Code Quality'
+          }
+        }
+        
+      }
+    }
+    
+    
     stage('TagBuild') {
       steps {
         sh '''#clean prune 
