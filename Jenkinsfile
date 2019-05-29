@@ -50,15 +50,15 @@ pipeline {
     stage('TagBuild') {
       steps {
         sh '''#clean prune 
-docker system prune --all --force --volumes
-cd $WORKSPACE
+docker system prune --all --force --volumes || true
+cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2
 docker build -t ocel12356/helloworldwebappdocker ./target'''
       }
     }
     stage('PushToDockerHub') {
       steps {
         sh '''
-cd $WORKSPACE/target
+cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2/target
 docker push ocel12356/helloworldwebappdocker '''
       }
     }
