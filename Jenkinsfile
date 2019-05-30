@@ -55,7 +55,7 @@ cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2
 docker build -t ocel12356/helloworldwebappdocker ./target'''
       }
     }
-    stage('PushToDockerHub') {
+    stage('PushToDockerRepository') {
       steps {
         sh '''
 cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2/target
