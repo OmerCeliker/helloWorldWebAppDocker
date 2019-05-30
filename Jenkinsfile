@@ -62,7 +62,7 @@ cd /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2/target
 docker push ocel12356/helloworldwebappdocker '''
       }
     }
-    stage('PublishPortRunImage') {
+    stage('PublishService') {
       steps {
         sh '''
          # docker kill $( docker ps | grep 8083  | awk \'{print $1}\' ) || true
