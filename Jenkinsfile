@@ -66,7 +66,7 @@ docker push ocel12356/helloworldwebappdocker '''
       steps {
         sh '''
         cp -v /var/lib/jenkins/workspace/helloWorldWebAppDocker_master@2/Route53.json . 
- java -jar $JENKINS_HOME/sshclient-1.0.0.jar -o ./Route53.json -d tsangularbackend -u ubuntu -s ec2-18-216-4-38.us-east-2.compute.amazonaws.com -i $JENKINS_HOME/ohio.pem -r 1 -m ocel12356/helloworldwebappdocker -p 8083
+ java -jar $JENKINS_HOME/sshclient-1.0.0.jar -o ./Route53.json -d tsangularbackend -u ubuntu -s ec2-18-216-4-38.us-east-2.compute.amazonaws.com -i $JENKINS_HOME/ohio.pem -r 2 -m ocel12356/helloworldwebappdocker -p 8083
          '''
       }
     }
